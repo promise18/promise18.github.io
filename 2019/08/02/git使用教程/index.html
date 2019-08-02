@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="使用Git目的借助github托管项目代码 基本概念仓库（Repository）仓库的意思，即你的项目，你想在GitHub上开源一个项目，那就必须新建一个Repository，如果开源的项目多了，就拥有了多个Repository 收藏（Star）收藏项目，方便下次查看。 复制克隆项目（Fork） 该fork的项目是独立存在的。 发起请求（Pull Request）发起请求，这个其实是基于Fork的">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git使用笔记">
+<meta property="og:url" content="http://yoursite.com/2019/08/02/git使用教程/index.html">
+<meta property="og:site_name" content="云笔记">
+<meta property="og:description" content="使用Git目的借助github托管项目代码 基本概念仓库（Repository）仓库的意思，即你的项目，你想在GitHub上开源一个项目，那就必须新建一个Repository，如果开源的项目多了，就拥有了多个Repository 收藏（Star）收藏项目，方便下次查看。 复制克隆项目（Fork） 该fork的项目是独立存在的。 发起请求（Pull Request）发起请求，这个其实是基于Fork的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/08/02/git使用教程/1563169184138.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/02/git使用教程/185430j73kd854krr3p58d.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/02/git使用教程/clip_image002.jpg">
+<meta property="og:updated_time" content="2019-08-02T10:33:46.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git使用笔记">
+<meta name="twitter:description" content="使用Git目的借助github托管项目代码 基本概念仓库（Repository）仓库的意思，即你的项目，你想在GitHub上开源一个项目，那就必须新建一个Repository，如果开源的项目多了，就拥有了多个Repository 收藏（Star）收藏项目，方便下次查看。 复制克隆项目（Fork） 该fork的项目是独立存在的。 发起请求（Pull Request）发起请求，这个其实是基于Fork的">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/02/git使用教程/1563169184138.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/02/git使用教程/">
+
+
+
+
+
+  <title>Git使用笔记 | 云笔记</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">云笔记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/git使用教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="promise18">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Git使用笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T18:24:36+08:00">
+                2019-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Git学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="u4F7F_u7528Git"><a href="#u4F7F_u7528Git" class="headerlink" title="使用Git"></a>使用Git</h1><h2 id="u76EE_u7684"><a href="#u76EE_u7684" class="headerlink" title="目的"></a>目的</h2><p>借助github托管项目代码</p>
+<h2 id="u57FA_u672C_u6982_u5FF5"><a href="#u57FA_u672C_u6982_u5FF5" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="u4ED3_u5E93_uFF08Repository_uFF09"><a href="#u4ED3_u5E93_uFF08Repository_uFF09" class="headerlink" title="仓库（Repository）"></a>仓库（Repository）</h3><p>仓库的意思，即你的项目，你想在GitHub上开源一个项目，那就必须新建一个Repository，如果开源的项目多了，就拥有了多个Repository</p>
+<h3 id="u6536_u85CF_uFF08Star_uFF09"><a href="#u6536_u85CF_uFF08Star_uFF09" class="headerlink" title="收藏（Star）"></a>收藏（Star）</h3><p>收藏项目，方便下次查看。</p>
+<h3 id="u590D_u5236_u514B_u9686_u9879_u76EE_uFF08Fork_uFF09"><a href="#u590D_u5236_u514B_u9686_u9879_u76EE_uFF08Fork_uFF09" class="headerlink" title="复制克隆项目（Fork）"></a>复制克隆项目（Fork）</h3><p><img src="/2019/08/02/git使用教程/1563169184138.png" alt="1563169184138"></p>
+<p>该fork的项目是独立存在的。</p>
+<h3 id="u53D1_u8D77_u8BF7_u6C42_uFF08Pull_Request_uFF09"><a href="#u53D1_u8D77_u8BF7_u6C42_uFF08Pull_Request_uFF09" class="headerlink" title="发起请求（Pull Request）"></a>发起请求（Pull Request）</h3><p>发起请求，这个其实是基于Fork的。如果别人在你项目的基础上做了改进，后来觉得改进的不错，应该要把这些改进让更多人获益，于是就想把自己的改进合并到原有的项目里，这个时候他就可以发起一个pull Request（PR）,原有项目创建人，也就是你，就可以收到这个请求，这个时候你会仔细review他的代码，并且测试觉得OK了，就会接受他的PR，这个时候他做的改进原有项目就有了。</p>
+<h3 id="u5173_u6CE8_uFF08Watch_uFF09"><a href="#u5173_u6CE8_uFF08Watch_uFF09" class="headerlink" title="关注（Watch）"></a>关注（Watch）</h3><p>关注项目，当项目更新可以接收到通知</p>
+<h3 id="u4E8B_u52A1_u5361_u7247_uFF08Issues_uFF09"><a href="#u4E8B_u52A1_u5361_u7247_uFF08Issues_uFF09" class="headerlink" title="事务卡片（Issues）"></a>事务卡片（Issues）</h3><p>发现代码BUG，但是目前没有成型代码，需要讨论时用；</p>
+<p>当你开源了一个项目，别人发现你的项目中有bug，或者哪些地方做的不够好，他就可以给你提issue，即问题，你看到了这些问题就可以逐个修复，修复ok了就可以一个个close掉了。</p>
+<h2 id="u521D_u6B21_u4F7F_u7528git_u524D_u7684_u914D_u7F6E"><a href="#u521D_u6B21_u4F7F_u7528git_u524D_u7684_u914D_u7F6E" class="headerlink" title="初次使用git前的配置"></a>初次使用git前的配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; git config --global user.name &quot;FishC_Service&quot;</span><br><span class="line">&gt; git config --global user.email &quot;fishc_service@126.com&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>普通的程序员是把很多的时间放在写代码和调 Bug 上，而优秀的程序员是将更多的精力放在设计上……</strong></p>
+<h2 id="u4E09_u68F5_u6811"><a href="#u4E09_u68F5_u6811" class="headerlink" title="三棵树"></a>三棵树</h2><p>  你的本地仓库有 Git 维护的三棵“树”组成，这是 Git 的核心框架。</p>
+<p>这三棵树分别是：工作区域、暂存区域和 Git 仓库  </p>
+<p><img src="/2019/08/02/git使用教程/185430j73kd854krr3p58d.png" alt="img"></p>
+<p>工作区域（Working Directory）就是你平时存放项目代码的地方。</p>
+<p>暂存区域（Stage）用于临时存放你的改动，事实上它只是一个文件，保存即将提交的文件列表信息。</p>
+<p>Git 仓库（Repository）就是安全存放数据的位置，这里边有你提交的所有版本的数据。其中，HEAD 指向最新放入仓库的版本（这第三棵树，确切的说，应该是 Git 仓库中 HEAD 指向的版本）。</p>
+<p>Git 的工作流程：  </p>
+<ol>
+<li><p>在工作目录中添加、修改文件；</p>
+</li>
+<li><p>将需要进行版本管理的文件放入暂存区域；</p>
+</li>
+<li><p>将暂存区域的文件提交到 Git 仓库。</p>
+</li>
+</ol>
+<p>因此，Git 管理的文件有三种状态：已修改（modified）、已暂存（staged）和已提交（committed），依次对应上边的每一个流程。</p>
+<p>你说 Git 仓库用于存放每次的版本迭代，我可以理解。但为何还要多增加一个暂存区域呢？”</p>
+<p>我这里打个比方：像某些厂家开发一个产品，一般他们都留有一手，不会把该产品的所有特性一次性发布。通过产品的迭代，每年秋季你就可以开开心心地买到又有一两项新功能的“新”产品了。</p>
+<p>So，有时你并不想把工作目录中所有的新功能都提交到最新版本，你就可以先添加一些本次需要提交的文件到暂存区，然后从暂存区中提交它们……所以暂存区在江湖中有个外号叫“索引”（Index）。</p>
+<h2 id="u4F7F_u7528_u547D_u4EE4"><a href="#u4F7F_u7528_u547D_u4EE4" class="headerlink" title="使用命令"></a>使用命令</h2><h3 id="u521B_u5EFA_u6587_u4EF6_u5939"><a href="#u521B_u5EFA_u6587_u4EF6_u5939" class="headerlink" title="创建文件夹"></a>创建文件夹</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir test</span><br></pre></td></tr></table></figure>
+<h3 id="u5728_u6587_u4EF6_u5939_u5185_u521B_u5EFA_u4ED3_u5E93"><a href="#u5728_u6587_u4EF6_u5939_u5185_u521B_u5EFA_u4ED3_u5E93" class="headerlink" title="在文件夹内创建仓库"></a>在文件夹内创建仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd test</span><br><span class="line">pwd</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h3 id="u5411_u4ED3_u5E93_u6DFB_u52A0_u6587_u4EF6"><a href="#u5411_u4ED3_u5E93_u6DFB_u52A0_u6587_u4EF6" class="headerlink" title="向仓库添加文件"></a>向仓库添加文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch a1.php                         # 创建a1.php文件到工作目录</span><br></pre></td></tr></table></figure>
+<h3 id="u5C06_u6587_u4EF6_u6DFB_u52A0_u5230_u6682_u5B58_u533A"><a href="#u5C06_u6587_u4EF6_u6DFB_u52A0_u5230_u6682_u5B58_u533A" class="headerlink" title="将文件添加到暂存区"></a>将文件添加到暂存区</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add a1.php                      # 添加a1.php到暂存区</span><br></pre></td></tr></table></figure>
+<h3 id="u5C06_u6587_u4EF6_u4ECE_u6682_u5B58_u533A_u63D0_u4EA4_u5230_u672C_u5730_u4ED3_u5E93"><a href="#u5C06_u6587_u4EF6_u4ECE_u6682_u5B58_u533A_u63D0_u4EA4_u5230_u672C_u5730_u4ED3_u5E93" class="headerlink" title="将文件从暂存区提交到本地仓库"></a>将文件从暂存区提交到本地仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m  &apos;第一次提交文件&apos;     # 添加a1.php到仓库</span><br></pre></td></tr></table></figure>
+<h3 id="u4FEE_u6539_u4ED3_u5E93_u6587_u4EF6"><a href="#u4FEE_u6539_u4ED3_u5E93_u6587_u4EF6" class="headerlink" title="修改仓库文件"></a>修改仓库文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi a1.php</span><br></pre></td></tr></table></figure>
+<h3 id="u67E5_u770B_u4FEE_u6539_u5185_u5BB9"><a href="#u67E5_u770B_u4FEE_u6539_u5185_u5BB9" class="headerlink" title="查看修改内容"></a>查看修改内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff readme.txt</span><br></pre></td></tr></table></figure>
+<h3 id="u5220_u9664_u4ED3_u5E93_u6587_u4EF6"><a href="#u5220_u9664_u4ED3_u5E93_u6587_u4EF6" class="headerlink" title="删除仓库文件"></a>删除仓库文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf a1.php</span><br></pre></td></tr></table></figure>
+<h3 id="u514B_u9686_u8FDC_u7A0B_u4ED3_u5E93"><a href="#u514B_u9686_u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/02/git使用教程/clip_image002.jpg" alt="img"></p>
+<h3 id="u6DFB_u52A0_u8FDC_u7A0B_u4ED3_u5E93"><a href="#u6DFB_u52A0_u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:用户名/learngit.git</span><br></pre></td></tr></table></figure>
+<h3 id="u5C06_u672C_u5730_u5E93_u7684_u5185_u5BB9_u63A8_u9001_u5230_u8FDC_u7A0B_u5E93"><a href="#u5C06_u672C_u5730_u5E93_u7684_u5185_u5BB9_u63A8_u9001_u5230_u8FDC_u7A0B_u5E93" class="headerlink" title="将本地库的内容推送到远程库"></a>将本地库的内容推送到远程库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin master # 第一次加-u</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="u663E_u793A_u5F53_u524D_u76EE_u5F55"><a href="#u663E_u793A_u5F53_u524D_u76EE_u5F55" class="headerlink" title="显示当前目录"></a>显示当前目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+<h3 id="u8FD4_u56DE_u4E0A_u4E00_u7EA7"><a href="#u8FD4_u56DE_u4E0A_u4E00_u7EA7" class="headerlink" title="返回上一级"></a>返回上一级</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/02/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="promise18">
+            
+              <p class="site-author-name" itemprop="name">promise18</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4F7F_u7528Git"><span class="nav-number">1.</span> <span class="nav-text">使用Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u76EE_u7684"><span class="nav-number">1.1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u57FA_u672C_u6982_u5FF5"><span class="nav-number">1.2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4ED3_u5E93_uFF08Repository_uFF09"><span class="nav-number">1.2.1.</span> <span class="nav-text">仓库（Repository）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6536_u85CF_uFF08Star_uFF09"><span class="nav-number">1.2.2.</span> <span class="nav-text">收藏（Star）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u590D_u5236_u514B_u9686_u9879_u76EE_uFF08Fork_uFF09"><span class="nav-number">1.2.3.</span> <span class="nav-text">复制克隆项目（Fork）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53D1_u8D77_u8BF7_u6C42_uFF08Pull_Request_uFF09"><span class="nav-number">1.2.4.</span> <span class="nav-text">发起请求（Pull Request）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5173_u6CE8_uFF08Watch_uFF09"><span class="nav-number">1.2.5.</span> <span class="nav-text">关注（Watch）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E8B_u52A1_u5361_u7247_uFF08Issues_uFF09"><span class="nav-number">1.2.6.</span> <span class="nav-text">事务卡片（Issues）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u521D_u6B21_u4F7F_u7528git_u524D_u7684_u914D_u7F6E"><span class="nav-number">1.3.</span> <span class="nav-text">初次使用git前的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E09_u68F5_u6811"><span class="nav-number">1.4.</span> <span class="nav-text">三棵树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F7F_u7528_u547D_u4EE4"><span class="nav-number">1.5.</span> <span class="nav-text">使用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFA_u6587_u4EF6_u5939"><span class="nav-number">1.5.1.</span> <span class="nav-text">创建文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5728_u6587_u4EF6_u5939_u5185_u521B_u5EFA_u4ED3_u5E93"><span class="nav-number">1.5.2.</span> <span class="nav-text">在文件夹内创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5411_u4ED3_u5E93_u6DFB_u52A0_u6587_u4EF6"><span class="nav-number">1.5.3.</span> <span class="nav-text">向仓库添加文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C06_u6587_u4EF6_u6DFB_u52A0_u5230_u6682_u5B58_u533A"><span class="nav-number">1.5.4.</span> <span class="nav-text">将文件添加到暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C06_u6587_u4EF6_u4ECE_u6682_u5B58_u533A_u63D0_u4EA4_u5230_u672C_u5730_u4ED3_u5E93"><span class="nav-number">1.5.5.</span> <span class="nav-text">将文件从暂存区提交到本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4FEE_u6539_u4ED3_u5E93_u6587_u4EF6"><span class="nav-number">1.5.6.</span> <span class="nav-text">修改仓库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u67E5_u770B_u4FEE_u6539_u5185_u5BB9"><span class="nav-number">1.5.7.</span> <span class="nav-text">查看修改内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5220_u9664_u4ED3_u5E93_u6587_u4EF6"><span class="nav-number">1.5.8.</span> <span class="nav-text">删除仓库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u514B_u9686_u8FDC_u7A0B_u4ED3_u5E93"><span class="nav-number">1.5.9.</span> <span class="nav-text">克隆远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u8FDC_u7A0B_u4ED3_u5E93"><span class="nav-number">1.5.10.</span> <span class="nav-text">添加远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C06_u672C_u5730_u5E93_u7684_u5185_u5BB9_u63A8_u9001_u5230_u8FDC_u7A0B_u5E93"><span class="nav-number">1.5.11.</span> <span class="nav-text">将本地库的内容推送到远程库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u663E_u793A_u5F53_u524D_u76EE_u5F55"><span class="nav-number">1.5.12.</span> <span class="nav-text">显示当前目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD4_u56DE_u4E0A_u4E00_u7EA7"><span class="nav-number">1.5.13.</span> <span class="nav-text">返回上一级</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">promise18</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

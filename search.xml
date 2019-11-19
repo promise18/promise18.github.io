@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title>SpringBoot构建电商项目</title>
     <url>/2019/11/19/Java%E5%90%8E%E7%AB%AF/SpringBoot%20%E6%9E%84%E5%BB%BA%E7%94%B5%E5%95%86%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="u4E00_u3001_u7B80_u4ECB"><a href="#u4E00_u3001_u7B80_u4ECB" class="headerlink" title="一、简介"></a>一、简介</h1><p>参照慕课网<a href="https://www.imooc.com/learn/1079" target="_blank" rel="noopener">SpringBoot构建电商基础秒杀项目</a></p>
-<h2 id="1_u3001Spring_Boot_u7B80_u4ECB"><a href="#1_u3001Spring_Boot_u7B80_u4ECB" class="headerlink" title="1、Spring Boot简介"></a>1、Spring Boot简介</h2><p>SpringBoot不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包。SpringBoot整合了所有的框架，并通过一行简单的main方法启动应用。</p>
+    <content><![CDATA[<h1 id="u4E00_u3001_u7B80_u4ECB"><a href="#u4E00_u3001_u7B80_u4ECB" class="headerlink" title="一、简介"></a>一、简介</h1><h2 id="1_u3001Spring_Boot_u7B80_u4ECB"><a href="#1_u3001Spring_Boot_u7B80_u4ECB" class="headerlink" title="1、Spring Boot简介"></a>1、Spring Boot简介</h2><p>SpringBoot不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包。SpringBoot整合了所有的框架，并通过一行简单的main方法启动应用。</p>
 <p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566804291827.png" alt="1566804291827"></p>
 <h2 id="2_u3001_u7535_u5546_u79D2_u6740_u5E94_u7528_u7B80_u4ECB"><a href="#2_u3001_u7535_u5546_u79D2_u6740_u5E94_u7528_u7B80_u4ECB" class="headerlink" title="2、电商秒杀应用简介"></a>2、电商秒杀应用简介</h2><ul>
 <li>商品列表页获取秒杀商品列表</li>
@@ -90,7 +89,7 @@
 <li>学会一个电商秒杀系统的基本流程及代码实现</li>
 </ul>
 <p>1、使用前后端分离的方式在前端的ui完成了页面的展示</p>
-<p>2、在接入层使用了sprinmvc 的controller定义了view object返回通用对象和通用异常处理</p>
+<p>2、在接入层使用了springmvc 的controller定义了view object返回通用对象和通用异常处理</p>
 <p>3、业务层使用了对应的mybatis的接入以及model层领域模型的概念完成的相关核心服务的业务层并且使用了transactional的标签完成事务的切面</p>
 <p>4、数据库：mysql，缓存，本地缓存，集中式缓存redis</p>
 <p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1567390685847.png" alt="1567390685847"></p>
@@ -110,7 +109,15 @@
 <li>如何支撑亿级秒杀流量？</li>
 </ul>
 <p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1567391267113.png" alt="1567391267113"></p>
+<p>参照慕课网<a href="https://www.imooc.com/learn/1079" target="_blank" rel="noopener">SpringBoot构建电商基础秒杀项目</a></p>
 ]]></content>
+      <categories>
+        <category>项目学习</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+        <tag>项目</tag>
+      </tags>
   </entry>
   <entry>
     <title>SpringBoot入门(一)工程搭建</title>

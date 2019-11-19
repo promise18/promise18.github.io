@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、简介参照慕课网SpringBoot构建电商基础秒杀项目 1、Spring Boot简介SpringBoot不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包。SpringBoot整合了所有的框架，并通过一行简单的main方法启动应用。  2、电商秒杀应用简介 商品列表页获取秒杀商品列表 进入商品详情页获取秒杀商品详情 秒杀开始后进入下单确认页下单并支付成功">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HyCoder&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot 构建电商项目/index.html">
+<meta property="og:site_name" content="HyCoder&#39;s Blog">
+<meta property="og:description" content="一、简介参照慕课网SpringBoot构建电商基础秒杀项目 1、Spring Boot简介SpringBoot不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包。SpringBoot整合了所有的框架，并通过一行简单的main方法启动应用。  2、电商秒杀应用简介 商品列表页获取秒杀商品列表 进入商品详情页获取秒杀商品详情 秒杀开始后进入下单确认页下单并支付成功">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566804291827.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566805402859.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566805516324.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566805565590.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566805897601.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566806099127.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566806031455.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566806265031.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566868749472.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566869200183.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566873521746.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566873616460.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566869870436.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1567390685847.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1567391267113.png">
+<meta property="og:updated_time" content="2019-09-05T06:48:41.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HyCoder&#39;s Blog">
+<meta name="twitter:description" content="一、简介参照慕课网SpringBoot构建电商基础秒杀项目 1、Spring Boot简介SpringBoot不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包。SpringBoot整合了所有的框架，并通过一行简单的main方法启动应用。  2、电商秒杀应用简介 商品列表页获取秒杀商品列表 进入商品详情页获取秒杀商品详情 秒杀开始后进入下单确认页下单并支付成功">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/19/Java后端/SpringBoot%20构建电商项目/1566804291827.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/19/Java后端/SpringBoot 构建电商项目/">
+
+
+
+
+
+  <title> | HyCoder's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HyCoder's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/19/Java后端/SpringBoot 构建电商项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HyCoder">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HyCoder's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-19T15:28:24+08:00">
+                2019-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/19/Java后端/SpringBoot 构建电商项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/19/Java后端/SpringBoot 构建电商项目/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/11/19/Java后端/SpringBoot 构建电商项目/" class="leancloud_visitors" data-flag-title>
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="u4E00_u3001_u7B80_u4ECB"><a href="#u4E00_u3001_u7B80_u4ECB" class="headerlink" title="一、简介"></a>一、简介</h1><p>参照慕课网<a href="https://www.imooc.com/learn/1079" target="_blank" rel="noopener">SpringBoot构建电商基础秒杀项目</a></p>
+<h2 id="1_u3001Spring_Boot_u7B80_u4ECB"><a href="#1_u3001Spring_Boot_u7B80_u4ECB" class="headerlink" title="1、Spring Boot简介"></a>1、Spring Boot简介</h2><p>SpringBoot不是什么新的框架，它默认配置了很多框架的使用方式，就像maven整合了所有的jar包。SpringBoot整合了所有的框架，并通过一行简单的main方法启动应用。</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566804291827.png" alt="1566804291827"></p>
+<h2 id="2_u3001_u7535_u5546_u79D2_u6740_u5E94_u7528_u7B80_u4ECB"><a href="#2_u3001_u7535_u5546_u79D2_u6740_u5E94_u7528_u7B80_u4ECB" class="headerlink" title="2、电商秒杀应用简介"></a>2、电商秒杀应用简介</h2><ul>
+<li>商品列表页获取秒杀商品列表</li>
+<li>进入商品详情页获取秒杀商品详情</li>
+<li>秒杀开始后进入下单确认页下单并支付成功</li>
+</ul>
+<h1 id="u4E8C_u3001_u9879_u76EE_u5B9E_u6218"><a href="#u4E8C_u3001_u9879_u76EE_u5B9E_u6218" class="headerlink" title="二、项目实战"></a>二、项目实战</h1><h2 id="1_u3001_u4F7F_u7528IDEA+Maven_u642D_u5EFASpringBoot_u5F00_u53D1_u73AF_u5883"><a href="#1_u3001_u4F7F_u7528IDEA+Maven_u642D_u5EFASpringBoot_u5F00_u53D1_u73AF_u5883" class="headerlink" title="1、使用IDEA+Maven搭建SpringBoot开发环境"></a>1、使用IDEA+Maven搭建SpringBoot开发环境</h2><h3 id="1_u3001_u9879_u76EE_u521B_u5EFA_u6D41_u7A0B"><a href="#1_u3001_u9879_u76EE_u521B_u5EFA_u6D41_u7A0B" class="headerlink" title="1、项目创建流程"></a>1、项目创建流程</h3><p>1、点击maven，使用quickstart，点击next。</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566805402859.png" alt="1566805402859"></p>
+<p>2、命名，点击next</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566805516324.png" alt="1566805516324"></p>
+<p>3、继续点击next，进入下面页面</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566805565590.png" alt="1566805565590"></p>
+<p>4、点击Finish，完成创建。</p>
+<p>5、设置项目根目录</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566805897601.png" alt="1566805897601"></p>
+<p>6、设置test root</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566806099127.png" alt="1566806099127"></p>
+<p>7、设置resource root（需要先创建resources文件夹）</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566806031455.png" alt="1566806031455"></p>
+<p>8、项目目录结构</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566806265031.png" alt="1566806265031"></p>
+<h3 id="2_u3001_u914D_u7F6E_u6587_u4EF6"><a href="#2_u3001_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="2、配置文件"></a>2、配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;name&gt;miaosha&lt;/name&gt;</span><br><span class="line">&lt;!-- FIXME change it to the project&apos;s website --&gt;</span><br><span class="line">&lt;url&gt;http://www.example.com&lt;/url&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--放置在url下面--&gt;</span><br><span class="line">&lt;parent&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;2.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">  &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">&lt;/parent&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">//引入web开发的依赖</span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--配置数据库mysql--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--配置连接池管理数据库连接--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--springboot对mybatis的支持--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后，刷新maven工程下载jar包。</p>
+<p>这两个步骤知道就行，因为还有另一种创建方式可以直接生成。</p>
+<h2 id="2_u3001_u96C6_u6210MyBaits_u64CD_u4F5C_u6570_u636E_u5E93"><a href="#2_u3001_u96C6_u6210MyBaits_u64CD_u4F5C_u6570_u636E_u5E93" class="headerlink" title="2、集成MyBaits操作数据库"></a>2、集成MyBaits操作数据库</h2><p>springboot对应的配置化的操作在resource文件目录下创建默认的配置：application.properties，然后在该文件中进行配置。</p>
+<h3 id="1_u3001mybaits-generator_uFF08_u91CD_u70B9_uFF09"><a href="#1_u3001mybaits-generator_uFF08_u91CD_u70B9_uFF09" class="headerlink" title="1、mybaits-generator（重点）"></a>1、mybaits-generator（重点）</h3><p>在pom.xml文件中，需要进行如下配置。</p>
+<p>==这里需要注意一下，一开始添加<code>mybatis-generator-core</code>无法导入，需要现在上面的dependencies中先添加，让其下载，然后在剪切到这里。==</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--引入plugin--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>mybatis generator<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">phase</span>&gt;</span>package<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">goal</span>&gt;</span>generate<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--允许移动生成的文件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--允许自动覆盖文件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">overwrite</span>&gt;</span>true<span class="tag">&lt;/<span class="name">overwrite</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">            src/main/resources/mybatis-generator.xml</span><br><span class="line">        <span class="tag">&lt;/<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>新建数据库：</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566868749472.png" alt="1566868749472"></p>
+<p>建立表结构</p>
+<ul>
+<li>user-info表</li>
+</ul>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566869200183.png" alt="1566869200183"></p>
+<ul>
+<li>user-password表</li>
+</ul>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566873521746.png" alt="1566873521746"></p>
+<p>新建两个包:dao以及dataobject，为后面配置mybatis-generator.xml做准备。</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566873616460.png" alt="1566873616460"></p>
+<p>配置mybatis-generator.xml。</p>
+<p>注意，在配置<code>jdbcConnection</code>时：</p>
+<ul>
+<li>==driverClass的驱动需要注意，和过去版本不一样，这里配的mysql版本是8.0.15==</li>
+<li>==connectionURL注意时间问题，否则会报错）（或者修改mysql数据库时区）==</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration</span></span><br><span class="line"><span class="meta">        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"MysqlTables"</span> <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--数据库链接地址账号密码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.cj.jdbc.Driver"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://localhost:3306/miaosha?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;useSSL=false&amp;amp;serverTimezone=UTC"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">userId</span>=<span class="string">"root"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">password</span>=<span class="string">"root123"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--数据库类型和java类型的控制转换--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成DataObject类存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.miaoshaproject.dataobject"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成映射文件存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"mapping"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/resources"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成Dao类存放位置--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码</span></span><br><span class="line"><span class="comment">                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象</span></span><br><span class="line"><span class="comment">                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象</span></span><br><span class="line"><span class="comment">                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.miaoshaproject.dao"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--生成对应表及类名--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"user_info"</span> <span class="attr">domainObjectName</span>=<span class="string">"UserDO"</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"user_password"</span> <span class="attr">domainObjectName</span>=<span class="string">"UserPasswordDO"</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在run按钮下找到edit configuration新建maven并配置maven命令：</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1566869870436.png" alt="1566869870436"></p>
+<h2 id="3_u3001_u57FA_u7840_u80FD_u529B_u5EFA_u8BBE"><a href="#3_u3001_u57FA_u7840_u80FD_u529B_u5EFA_u8BBE" class="headerlink" title="3、基础能力建设"></a>3、基础能力建设</h2><h3 id="1_u3001service_u5C42"><a href="#1_u3001service_u5C42" class="headerlink" title="1、service层"></a>1、service层</h3><p>新建service包，在该包下新建UserService接口以及其实现类，</p>
+<p>UserService类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.service.model.UserModel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="comment">//通过用户ID获取用户的对象的方法</span></span><br><span class="line">    <span class="function">UserModel <span class="title">getUserById</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>UserServiceImpl类：本项目在该类下实现了两个方法，目的是将从数据库中的user表和password表放到一起，并存放到UserModel中，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.dao.UserDOMapper;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.dao.UserPasswordDOMapper;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.dataobject.UserDO;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.dataobject.UserPasswordDO;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.service.UserService;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.service.model.UserModel;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.BeanUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserDOMapper userDOMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserPasswordDOMapper userPasswordDOMapper;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="comment">//从数据库获取用户信息和密码并返回到UserModel</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> UserModel <span class="title">getUserById</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//调用userdomapper获取到对应的用户dataobject</span></span><br><span class="line">        UserDO userDO = userDOMapper.selectByPrimaryKey(id);</span><br><span class="line">        <span class="keyword">if</span>(userDO == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//通过用户id获取对应的用户加密密码信息</span></span><br><span class="line">        UserPasswordDO userPasswordDO = userPasswordDOMapper.selectByUserId(userDO.getId());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> convertFromDataObject(userDO,userPasswordDO);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将用户信息和密码存放到UserModel中</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> UserModel <span class="title">convertFromDataObject</span><span class="params">(UserDO userDO, UserPasswordDO userPasswordDO)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(userDO == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        UserModel userModel = <span class="keyword">new</span> UserModel();</span><br><span class="line">        BeanUtils.copyProperties(userDO,userModel);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(userPasswordDO!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            userModel.setEncrptPassword(userPasswordDO.getEncrptPassword());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> userModel;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>UserModel类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.service.model;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserModel</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Byte gender;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> String telphone;</span><br><span class="line">    <span class="keyword">private</span> String registerMode;</span><br><span class="line">    <span class="keyword">private</span> String thirdPartyId;</span><br><span class="line">    <span class="keyword">private</span> String encrptPassword;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEncrptPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> encrptPassword;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEncrptPassword</span><span class="params">(String encrptPassword)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.encrptPassword = encrptPassword;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Byte <span class="title">getGender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> gender;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(Byte gender)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.gender = gender;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTelphone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> telphone;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTelphone</span><span class="params">(String telphone)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.telphone = telphone;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getRegisterMode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> registerMode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRegisterMode</span><span class="params">(String registerMode)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.registerMode = registerMode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getThirdPartyId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> thirdPartyId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setThirdPartyId</span><span class="params">(String thirdPartyId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.thirdPartyId = thirdPartyId;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2_u3001controller_u5C42"><a href="#2_u3001controller_u5C42" class="headerlink" title="2、controller层"></a>2、controller层</h3><p>和service层类似，新建controller包，并创建UserController类和UserVO类（这个类的作用类似于UserModel类）</p>
+<p>UserController类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.controller.viewobject.UserVO;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.error.BusinessException;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.error.EmBussinessError;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.response.CommonReturnType;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.service.UserService;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.service.model.UserModel;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.BeanUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span>(<span class="string">"user"</span>)</span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> <span class="keyword">extends</span> <span class="title">BaseController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/get"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonReturnType <span class="title">getUser</span><span class="params">(@RequestParam(name = <span class="string">"id"</span>)</span> Integer id) <span class="keyword">throws</span> BusinessException </span>&#123;</span><br><span class="line">        <span class="comment">//调用service服务获取对应id的用户对象并返回给前端</span></span><br><span class="line">        UserModel userModel = userService.getUserById(id);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//若获取的对应用户信息不存在</span></span><br><span class="line">        <span class="keyword">if</span> (userModel == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BusinessException(EmBussinessError.USER_NOT_EXIST);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将核心领域对象模型用户对象转化为可供ui使用的viewobject</span></span><br><span class="line">        UserVO userVO = converFromModel(userModel);</span><br><span class="line">        <span class="keyword">return</span> CommonReturnType.create(userVO);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> UserVO <span class="title">converFromModel</span><span class="params">(UserModel userModel)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (userModel == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        UserVO userVO = <span class="keyword">new</span> UserVO();</span><br><span class="line">        BeanUtils.copyProperties(userModel, userVO);</span><br><span class="line">        <span class="keyword">return</span> userVO;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>UserVO类：只向前端展示部分信息。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.controller.viewobject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserVO</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Byte gender;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> String telphone;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Byte <span class="title">getGender</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> gender;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGender</span><span class="params">(Byte gender)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.gender = gender;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTelphone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> telphone;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTelphone</span><span class="params">(String telphone)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.telphone = telphone;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>BaseController类：基类。注意一下该类的HanlderException方法：向前端展示固定的响应信息（错误码，错误信息）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.error.BusinessException;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.error.EmBussinessError;</span><br><span class="line"><span class="keyword">import</span> com.miaoshaproject.response.CommonReturnType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.HttpStatus;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseStatus;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseController</span> </span>&#123;</span><br><span class="line">    <span class="comment">//定义exceptionhandler解决未被controller层吸收的exception</span></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(Exception.class)</span><br><span class="line">    <span class="meta">@ResponseStatus</span>(HttpStatus.OK)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">handlerException</span><span class="params">(HttpServletRequest request, Exception ex)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; responseData = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (ex <span class="keyword">instanceof</span> BusinessException) &#123;</span><br><span class="line">            BusinessException businessException = (BusinessException) ex;</span><br><span class="line">            responseData.put(<span class="string">"errCode"</span>, businessException.getErrCode());</span><br><span class="line">            responseData.put(<span class="string">"errMsg"</span>, businessException.getErrMsg());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            responseData.put(<span class="string">"errCode"</span>, EmBussinessError.UNKNOWN_ERROR.getErrCode());</span><br><span class="line">            responseData.put(<span class="string">"errMsg"</span>, EmBussinessError.UNKNOWN_ERROR.getErrMsg());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> CommonReturnType.create(responseData, <span class="string">"fail"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3_u3001response_u5305"><a href="#3_u3001response_u5305" class="headerlink" title="3、response包"></a>3、response包</h3><p>CommonReturnType：在该类下定义了向前端响应信息的固定格式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.response;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonReturnType</span> </span>&#123;</span><br><span class="line">    <span class="comment">//表明对应请求的返回处理结果“success”或“fail”</span></span><br><span class="line">    <span class="keyword">private</span> String status;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//若status=success，则data内返回前端需要的json数据</span></span><br><span class="line">    <span class="comment">//若status=fail，则data内使用通用的错误码格式</span></span><br><span class="line">    <span class="keyword">private</span> Object data;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义一个通用的创建方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CommonReturnType <span class="title">create</span><span class="params">(Object result)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> CommonReturnType.create(result,<span class="string">"success"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CommonReturnType <span class="title">create</span><span class="params">(Object result,String status)</span></span>&#123;</span><br><span class="line">        CommonReturnType type = <span class="keyword">new</span> CommonReturnType();</span><br><span class="line">        type.setStatus(status);</span><br><span class="line">        type.setData(result);</span><br><span class="line">        <span class="keyword">return</span> type;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStatus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> status;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStatus</span><span class="params">(String status)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.status = status;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setData</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4_u3001error_u5305"><a href="#4_u3001error_u5305" class="headerlink" title="4、error包"></a>4、error包</h3><p>实现对错误信息的封装。</p>
+<h4 id="1_u3001_u5B9A_u4E49CommonError_u63A5_u53E3_uFF0C"><a href="#1_u3001_u5B9A_u4E49CommonError_u63A5_u53E3_uFF0C" class="headerlink" title="1、定义CommonError接口，"></a>1、定义CommonError接口，</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.error;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CommonError</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getErrCode</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getErrMsg</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonError <span class="title">setErrorMsg</span><span class="params">(String errorMsg)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2_u3001_u5B9E_u73B0_u8BE5_u63A5_u53E3_uFF1A_u81EA_u5B9A_u4E49_u9519_u8BEF_u548C_u7CFB_u7EDF_u5F02_u5E38"><a href="#2_u3001_u5B9E_u73B0_u8BE5_u63A5_u53E3_uFF1A_u81EA_u5B9A_u4E49_u9519_u8BEF_u548C_u7CFB_u7EDF_u5F02_u5E38" class="headerlink" title="2、实现该接口：自定义错误和系统异常"></a>2、实现该接口：自定义错误和系统异常</h4><ul>
+<li>EmBusinessError类：自定义异常，枚举类型。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.error;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> EmBussinessError implements CommonError&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通用错误类型00001</span></span><br><span class="line">    PARAMETER_VALIDATION_ERROR(<span class="number">10001</span>,<span class="string">"参数不合法"</span>),</span><br><span class="line">    UNKNOWN_ERROR(<span class="number">10002</span>,<span class="string">"未知错误"</span>),</span><br><span class="line"></span><br><span class="line">    <span class="comment">//10000开头为用户信息相关错误定义</span></span><br><span class="line">    USER_NOT_EXIST(<span class="number">20001</span>,<span class="string">"用户不存在"</span>)</span><br><span class="line">    ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">EmBussinessError</span><span class="params">(<span class="keyword">int</span> errCode,String errMsg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.errCode=errCode;</span><br><span class="line">        <span class="keyword">this</span>.errMsg = errMsg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> errCode;</span><br><span class="line">    <span class="keyword">private</span> String errMsg;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getErrCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.errCode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getErrMsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.errMsg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonError <span class="title">setErrorMsg</span><span class="params">(String errorMsg)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.errMsg=errorMsg;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>系统异常，继承Exception类</li>
+</ul>
+<p>BusinessException类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.miaoshaproject.error;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//包装器业务异常类实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BusinessException</span> <span class="keyword">extends</span> <span class="title">Exception</span> <span class="keyword">implements</span> <span class="title">CommonError</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> CommonError commonError;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//直接接收EmBusinessError的传参用于构造业务异常</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BusinessException</span><span class="params">(CommonError commonError)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.commonError=commonError;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//接受自定义errMsg的方式构造业务异常</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BusinessException</span><span class="params">(CommonError commonError,String errMsg)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.commonError=commonError;</span><br><span class="line">        <span class="keyword">this</span>.commonError.setErrorMsg(errMsg);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getErrCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.commonError.getErrCode();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getErrMsg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.commonError.getErrMsg();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CommonError <span class="title">setErrorMsg</span><span class="params">(String errorMsg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.commonError.setErrorMsg(errorMsg);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>总结：首先定义一个CommonReturnType，能够用对应的status和data返回所有json序列化的固定的对象供前端解析使用，摒弃掉了用httpservlet自带的statuscode加内嵌tomcat 的自带的error页去处理，并且我们定义了commonbusinesserror去统一的管理所想要的错误码，然后要做的是在basecontroller里面定义了一个通用的exceptionhandler类来解决未被controller层吸收的exception。</p>
+<h2 id="4_u3001_u6A21_u578B_u80FD_u529B_u7BA1_u7406_uFF08_u53C2_u7167_u4EE3_u7801_uFF09"><a href="#4_u3001_u6A21_u578B_u80FD_u529B_u7BA1_u7406_uFF08_u53C2_u7167_u4EE3_u7801_uFF09" class="headerlink" title="4、模型能力管理（参照代码）"></a>4、模型能力管理（参照代码）</h2><p>==先设计领域模型，再设计表。先用mybatis-generator生成mapper.xml-&gt;service-&gt;serviceImp-&gt;controller==</p>
+<h3 id="1_u3001_u7528_u6237_u6A21_u5757_u5F00_u53D1"><a href="#1_u3001_u7528_u6237_u6A21_u5757_u5F00_u53D1" class="headerlink" title="1、用户模块开发"></a>1、用户模块开发</h3><h4 id="1_u3001otp_u77ED_u4FE1_u83B7_u53D6_uFF08otp_uFF1A_u7ED9_u7528_u6237_u53D1_u77ED_u4FE1_u544A_u8BC9_u9A8C_u8BC1_u7801_uFF09"><a href="#1_u3001otp_u77ED_u4FE1_u83B7_u53D6_uFF08otp_uFF1A_u7ED9_u7528_u6237_u53D1_u77ED_u4FE1_u544A_u8BC9_u9A8C_u8BC1_u7801_uFF09" class="headerlink" title="1、otp短信获取（otp：给用户发短信告诉验证码）"></a>1、otp短信获取（otp：给用户发短信告诉验证码）</h4><h4 id="2_u3001otp_u6CE8_u518C_u7528_u6237"><a href="#2_u3001otp_u6CE8_u518C_u7528_u6237" class="headerlink" title="2、otp注册用户"></a>2、otp注册用户</h4><h4 id="3_u3001_u7528_u6237_u624B_u673A_u767B_u9646"><a href="#3_u3001_u7528_u6237_u624B_u673A_u767B_u9646" class="headerlink" title="3、用户手机登陆"></a>3、用户手机登陆</h4><h4 id="4_u3001_u6570_u636E_u6821_u9A8C"><a href="#4_u3001_u6570_u636E_u6821_u9A8C" class="headerlink" title="4、数据校验"></a>4、数据校验</h4><h3 id="2_u3001_u5546_u54C1_u6A21_u5757_u5F00_u53D1"><a href="#2_u3001_u5546_u54C1_u6A21_u5757_u5F00_u53D1" class="headerlink" title="2、商品模块开发"></a>2、商品模块开发</h3><h4 id="1_u3001_u5546_u54C1_u521B_u5EFA"><a href="#1_u3001_u5546_u54C1_u521B_u5EFA" class="headerlink" title="1、商品创建"></a>1、商品创建</h4><h4 id="2_u3001_u5546_u54C1_u5217_u8868_u83B7_u53D6"><a href="#2_u3001_u5546_u54C1_u5217_u8868_u83B7_u53D6" class="headerlink" title="2、商品列表获取"></a>2、商品列表获取</h4><h4 id="3_u3001_u5546_u54C1_u8BE6_u60C5_u9875_u9762"><a href="#3_u3001_u5546_u54C1_u8BE6_u60C5_u9875_u9762" class="headerlink" title="3、商品详情页面"></a>3、商品详情页面</h4><h3 id="3_u3001_u4EA4_u6613_u6A21_u5757_u5F00_u53D1"><a href="#3_u3001_u4EA4_u6613_u6A21_u5757_u5F00_u53D1" class="headerlink" title="3、交易模块开发"></a>3、交易模块开发</h3><h4 id="1_u3001_u6D3B_u52A8_u6A21_u578B_u521B_u5EFA"><a href="#1_u3001_u6D3B_u52A8_u6A21_u578B_u521B_u5EFA" class="headerlink" title="1、活动模型创建"></a>1、活动模型创建</h4><h4 id="2_u3001_u6D3B_u52A8_u6A21_u578B_u4E0E_u5546_u54C1_u6A21_u578B_u76F8_u7ED3_u5408"><a href="#2_u3001_u6D3B_u52A8_u6A21_u578B_u4E0E_u5546_u54C1_u6A21_u578B_u76F8_u7ED3_u5408" class="headerlink" title="2、活动模型与商品模型相结合"></a>2、活动模型与商品模型相结合</h4><h3 id="4_u3001_u79D2_u6740_u6A21_u5757_u5F00_u53D1"><a href="#4_u3001_u79D2_u6740_u6A21_u5757_u5F00_u53D1" class="headerlink" title="4、秒杀模块开发"></a>4、秒杀模块开发</h3><h1 id="u8BFE_u7A0B_u603B_u7ED3"><a href="#u8BFE_u7A0B_u603B_u7ED3" class="headerlink" title="课程总结"></a>课程总结</h1><ul>
+<li>学会使用SpringBoot+mybatis完成JavaWeb项目的搭建</li>
+<li>学会一个电商秒杀系统的基本流程及代码实现</li>
+</ul>
+<p>1、使用前后端分离的方式在前端的ui完成了页面的展示</p>
+<p>2、在接入层使用了sprinmvc 的controller定义了view object返回通用对象和通用异常处理</p>
+<p>3、业务层使用了对应的mybatis的接入以及model层领域模型的概念完成的相关核心服务的业务层并且使用了transactional的标签完成事务的切面</p>
+<p>4、数据库：mysql，缓存，本地缓存，集中式缓存redis</p>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1567390685847.png" alt="1567390685847"></p>
+<h2 id="1_u3001_u51FA_u9519_u8C03_u8BD5"><a href="#1_u3001_u51FA_u9519_u8C03_u8BD5" class="headerlink" title="1、出错调试"></a>1、出错调试</h2><ul>
+<li>先确定问题点：环境问题，ui展示问题，接口问题，服务问题，配置问题</li>
+<li>调试：断点调试，日志调试</li>
+<li>互联网寻找答案</li>
+</ul>
+<h2 id="2_u3001_u8D44_u6E90"><a href="#2_u3001_u8D44_u6E90" class="headerlink" title="2、资源"></a>2、资源</h2><ul>
+<li>Metronic框架：基于bootstrap的付费ui模版</li>
+<li>视频代码内容：跟着老师的思路打一遍，融会贯通原理</li>
+</ul>
+<h2 id="3_u3001_u62D3_u5C55_u601D_u7EF4"><a href="#3_u3001_u62D3_u5C55_u601D_u7EF4" class="headerlink" title="3、拓展思维"></a>3、拓展思维</h2><ul>
+<li>多商品，多库存，多活动模型怎么实现？</li>
+</ul>
+<h2 id="4_u3001_u9057_u7559_u95EE_u9898"><a href="#4_u3001_u9057_u7559_u95EE_u9898" class="headerlink" title="4、遗留问题"></a>4、遗留问题</h2><ul>
+<li>如何支撑亿级秒杀流量？</li>
+</ul>
+<p><img src="/2019/11/19/Java后端/SpringBoot 构建电商项目/1567391267113.png" alt="1567391267113"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/18/Java后端/SpringBoot入门(一)工程快速搭建/" rel="next" title="SpringBoot入门(一)工程搭建">
+                <i class="fa fa-chevron-left"></i> SpringBoot入门(一)工程搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="HyCoder">
+            
+              <p class="site-author-name" itemprop="name">HyCoder</p>
+              <p class="site-description motion-element" itemprop="description">学习，记录，总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E00_u3001_u7B80_u4ECB"><span class="nav-text">一、简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_u3001Spring_Boot_u7B80_u4ECB"><span class="nav-text">1、Spring Boot简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2_u3001_u7535_u5546_u79D2_u6740_u5E94_u7528_u7B80_u4ECB"><span class="nav-text">2、电商秒杀应用简介</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E8C_u3001_u9879_u76EE_u5B9E_u6218"><span class="nav-text">二、项目实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_u3001_u4F7F_u7528IDEA+Maven_u642D_u5EFASpringBoot_u5F00_u53D1_u73AF_u5883"><span class="nav-text">1、使用IDEA+Maven搭建SpringBoot开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_u3001_u9879_u76EE_u521B_u5EFA_u6D41_u7A0B"><span class="nav-text">1、项目创建流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_u3001_u914D_u7F6E_u6587_u4EF6"><span class="nav-text">2、配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2_u3001_u96C6_u6210MyBaits_u64CD_u4F5C_u6570_u636E_u5E93"><span class="nav-text">2、集成MyBaits操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_u3001mybaits-generator_uFF08_u91CD_u70B9_uFF09"><span class="nav-text">1、mybaits-generator（重点）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3_u3001_u57FA_u7840_u80FD_u529B_u5EFA_u8BBE"><span class="nav-text">3、基础能力建设</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_u3001service_u5C42"><span class="nav-text">1、service层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_u3001controller_u5C42"><span class="nav-text">2、controller层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3_u3001response_u5305"><span class="nav-text">3、response包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4_u3001error_u5305"><span class="nav-text">4、error包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1_u3001_u5B9A_u4E49CommonError_u63A5_u53E3_uFF0C"><span class="nav-text">1、定义CommonError接口，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2_u3001_u5B9E_u73B0_u8BE5_u63A5_u53E3_uFF1A_u81EA_u5B9A_u4E49_u9519_u8BEF_u548C_u7CFB_u7EDF_u5F02_u5E38"><span class="nav-text">2、实现该接口：自定义错误和系统异常</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4_u3001_u6A21_u578B_u80FD_u529B_u7BA1_u7406_uFF08_u53C2_u7167_u4EE3_u7801_uFF09"><span class="nav-text">4、模型能力管理（参照代码）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_u3001_u7528_u6237_u6A21_u5757_u5F00_u53D1"><span class="nav-text">1、用户模块开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1_u3001otp_u77ED_u4FE1_u83B7_u53D6_uFF08otp_uFF1A_u7ED9_u7528_u6237_u53D1_u77ED_u4FE1_u544A_u8BC9_u9A8C_u8BC1_u7801_uFF09"><span class="nav-text">1、otp短信获取（otp：给用户发短信告诉验证码）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2_u3001otp_u6CE8_u518C_u7528_u6237"><span class="nav-text">2、otp注册用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3_u3001_u7528_u6237_u624B_u673A_u767B_u9646"><span class="nav-text">3、用户手机登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4_u3001_u6570_u636E_u6821_u9A8C"><span class="nav-text">4、数据校验</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_u3001_u5546_u54C1_u6A21_u5757_u5F00_u53D1"><span class="nav-text">2、商品模块开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1_u3001_u5546_u54C1_u521B_u5EFA"><span class="nav-text">1、商品创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2_u3001_u5546_u54C1_u5217_u8868_u83B7_u53D6"><span class="nav-text">2、商品列表获取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3_u3001_u5546_u54C1_u8BE6_u60C5_u9875_u9762"><span class="nav-text">3、商品详情页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3_u3001_u4EA4_u6613_u6A21_u5757_u5F00_u53D1"><span class="nav-text">3、交易模块开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1_u3001_u6D3B_u52A8_u6A21_u578B_u521B_u5EFA"><span class="nav-text">1、活动模型创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2_u3001_u6D3B_u52A8_u6A21_u578B_u4E0E_u5546_u54C1_u6A21_u578B_u76F8_u7ED3_u5408"><span class="nav-text">2、活动模型与商品模型相结合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4_u3001_u79D2_u6740_u6A21_u5757_u5F00_u53D1"><span class="nav-text">4、秒杀模块开发</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u8BFE_u7A0B_u603B_u7ED3"><span class="nav-text">课程总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_u3001_u51FA_u9519_u8C03_u8BD5"><span class="nav-text">1、出错调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2_u3001_u8D44_u6E90"><span class="nav-text">2、资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3_u3001_u62D3_u5C55_u601D_u7EF4"><span class="nav-text">3、拓展思维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4_u3001_u9057_u7559_u95EE_u9898"><span class="nav-text">4、遗留问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HyCoder</span>
+
+  
+  
+</div>
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'cn10j7NOISCtjqnQDh9lpxJt-gzGzoHsz',
+        appKey: 'EAiimqx61ssfShQ7DYMUekYR',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cn10j7NOISCtjqnQDh9lpxJt-gzGzoHsz", "EAiimqx61ssfShQ7DYMUekYR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

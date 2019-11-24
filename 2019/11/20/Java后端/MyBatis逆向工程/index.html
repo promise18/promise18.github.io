@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="创建型模式,">
+  <meta name="keywords" content="SpringBoot,项目,">
 
 
 
@@ -79,18 +79,24 @@
 
 
 
-<meta name="description" content="创建型模式的主要关注点是“怎样创建对象？”，它这样可以降低系统的耦合度，使用者不需要关注对象的创建细节，对象的创建由相关的工厂来完成。就像我们去商场购买商品时，不需要知道商品是怎么生产出来一样，因为它们由专门的厂商生产。  创建型模式分为以下几种。   单例（Singleton）模式：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式。 原型（Prototype">
-<meta name="keywords" content="创建型模式">
+<meta name="description" content="1、pom.xml配置在pom.xml文件中，需要进行如下配置。 ==这里需要注意一下，一开始添加mybatis-generator-core可能无法导入，需要先在上面的dependencies中先添加，让其下载，然后在剪切到这里。== 1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!--引入plugi">
+<meta name="keywords" content="SpringBoot,项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="创建型模式">
-<meta property="og:url" content="http://yoursite.com/2019/11/24/创建型模式/index.html">
+<meta property="og:title" content="在SpringBoot中生成Mybatis逆向文件">
+<meta property="og:url" content="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/index.html">
 <meta property="og:site_name" content="HyCoder&#39;s Blog">
-<meta property="og:description" content="创建型模式的主要关注点是“怎样创建对象？”，它这样可以降低系统的耦合度，使用者不需要关注对象的创建细节，对象的创建由相关的工厂来完成。就像我们去商场购买商品时，不需要知道商品是怎么生产出来一样，因为它们由专门的厂商生产。  创建型模式分为以下几种。   单例（Singleton）模式：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式。 原型（Prototype">
+<meta property="og:description" content="1、pom.xml配置在pom.xml文件中，需要进行如下配置。 ==这里需要注意一下，一开始添加mybatis-generator-core可能无法导入，需要先在上面的dependencies中先添加，让其下载，然后在剪切到这里。== 1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!--引入plugi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-24T02:54:40.945Z">
+<meta property="og:image" content="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/1566868749472.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/1566869200183.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/1566873521746.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/1566873616460.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/1566869870436.png">
+<meta property="og:updated_time" content="2019-11-24T02:58:06.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="创建型模式">
-<meta name="twitter:description" content="创建型模式的主要关注点是“怎样创建对象？”，它这样可以降低系统的耦合度，使用者不需要关注对象的创建细节，对象的创建由相关的工厂来完成。就像我们去商场购买商品时，不需要知道商品是怎么生产出来一样，因为它们由专门的厂商生产。  创建型模式分为以下几种。   单例（Singleton）模式：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式。 原型（Prototype">
+<meta name="twitter:title" content="在SpringBoot中生成Mybatis逆向文件">
+<meta name="twitter:description" content="1、pom.xml配置在pom.xml文件中，需要进行如下配置。 ==这里需要注意一下，一开始添加mybatis-generator-core可能无法导入，需要先在上面的dependencies中先添加，让其下载，然后在剪切到这里。== 1234567891011121314151617181920212223242526272829303132333435363738&amp;lt;!--引入plugi">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/1566868749472.png">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/24/创建型模式/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/">
 
 
 
 
 
-  <title>创建型模式 | HyCoder's Blog</title>
+  <title>在SpringBoot中生成Mybatis逆向文件 | HyCoder's Blog</title>
   
 
 
@@ -295,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/24/创建型模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/Java后端/MyBatis逆向工程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HyCoder">
@@ -312,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">创建型模式</h1>
+          <h1 class="post-title" itemprop="name headline">在SpringBoot中生成Mybatis逆向文件</h1>
         
 
         <div class="post-meta">
@@ -324,8 +330,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-24T10:51:18+08:00">
-                2019-11-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-20T09:40:20+08:00">
+                2019-11-20
               </time>
             
 
@@ -347,19 +353,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/创建型模式/" itemprop="url" rel="index">
-                    <span itemprop="name">创建型模式</span>
+                  <a href="/categories/项目学习/" itemprop="url" rel="index">
+                    <span itemprop="name">项目学习</span>
                   </a>
                 </span>
 
@@ -376,8 +371,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/24/创建型模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/24/创建型模式/" itemprop="commentCount"></span>
+                <a href="/2019/11/20/Java后端/MyBatis逆向工程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/20/Java后端/MyBatis逆向工程/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,7 +380,7 @@
 
           
           
-             <span id="/2019/11/24/创建型模式/" class="leancloud_visitors" data-flag-title="创建型模式">
+             <span id="/2019/11/20/Java后端/MyBatis逆向工程/" class="leancloud_visitors" data-flag-title="在SpringBoot中生成Mybatis逆向文件">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,18 +411,32 @@
       
 
       
-        <p>创建型模式的主要关注点是“怎样创建对象？”，它这样可以降低系统的耦合度，使用者不需要关注对象的创建细节，对象的创建由相关的工厂来完成。就像我们去商场购买商品时，不需要知道商品是怎么生产出来一样，因为它们由专门的厂商生产。</p>
-<p> 创建型模式分为以下几种。 </p>
+        <h2 id="1_u3001pom-xml_u914D_u7F6E"><a href="#1_u3001pom-xml_u914D_u7F6E" class="headerlink" title="1、pom.xml配置"></a>1、pom.xml配置</h2><p>在pom.xml文件中，需要进行如下配置。</p>
+<p>==这里需要注意一下，一开始添加<code>mybatis-generator-core</code>可能无法导入，需要先在上面的dependencies中先添加，让其下载，然后在剪切到这里。==</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--引入plugin(插件)--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">       	<span class="comment">&lt;!--1--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.generator<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-generator-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.5<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--2--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.15<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>mybatis generator<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">phase</span>&gt;</span>package<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">goal</span>&gt;</span>generate<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--允许移动生成的文件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">verbose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">verbose</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--允许自动覆盖文件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">overwrite</span>&gt;</span>true<span class="tag">&lt;/<span class="name">overwrite</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">            src/main/resources/mybatis-generator.xml</span><br><span class="line">        <span class="tag">&lt;/<span class="name">configurationFile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2__u3001_u6570_u636E_u5E93_u64CD_u4F5C"><a href="#2__u3001_u6570_u636E_u5E93_u64CD_u4F5C" class="headerlink" title="2 、数据库操作"></a>2 、数据库操作</h2><p>新建数据库：</p>
+<p><img src="/2019/11/20/Java后端/MyBatis逆向工程/1566868749472.png" alt="1566868749472"></p>
+<p>建立表结构</p>
 <ul>
-<li>单例（Singleton）模式：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式。</li>
-<li>原型（Prototype）模式：将一个对象作为原型，通过对其进行复制而克隆出多个和原型类似的新实例。</li>
-<li>工厂方法（FactoryMethod）模式：定义一个用于创建产品的接口，由子类决定生产什么产品。</li>
-<li>抽象工厂（AbstractFactory）模式：提供一个创建产品族的接口，其每个子类可以生产一系列相关的产品。</li>
-<li>建造者（Builder）模式：将一个复杂对象分解成多个相对简单的部分，然后根据不同需要分别创建它们，最后构建成该复杂对象。</li>
+<li>user-info表</li>
 </ul>
-<p>以上 5 种创建型模式，除了属于类创建型模式，其他的全部属于对象创建型模式。</p>
-<p>参考: <a href="http://c.biancheng.net/view/1335.html" target="_blank" rel="noopener">http://c.biancheng.net/view/1335.html</a> </p>
-
+<p><img src="/2019/11/20/Java后端/MyBatis逆向工程/1566869200183.png" alt="1566869200183"></p>
+<ul>
+<li>user-password表</li>
+</ul>
+<p><img src="/2019/11/20/Java后端/MyBatis逆向工程/1566873521746.png" alt="1566873521746"></p>
+<p>新建两个包:dao以及dataobject，为后面配置mybatis-generator.xml做准备。</p>
+<p><img src="/2019/11/20/Java后端/MyBatis逆向工程/1566873616460.png" alt="1566873616460"></p>
+<h2 id="3_u3001_u914D_u7F6E_u9006_u5411_u5DE5_u7A0B_u6587_u4EF6"><a href="#3_u3001_u914D_u7F6E_u9006_u5411_u5DE5_u7A0B_u6587_u4EF6" class="headerlink" title="3、配置逆向工程文件"></a>3、配置逆向工程文件</h2><p>新建mybatis-generator.xml，并进行配置。</p>
+<p>注意，在配置<code>jdbcConnection</code>时：</p>
+<ul>
+<li>==driverClass的驱动需要注意，和过去版本不一样，这里配的mysql版本是8.0.15==</li>
+<li>==connectionURL注意时间问题，否则会报错。（或者修改mysql数据库时区）==</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration</span></span><br><span class="line"><span class="meta">        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"MysqlTables"</span> <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!-- 是否去除自动生成的注释 true：是；false:否 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!--数据库连接的信息：驱动类、连接地址、用户名、密码,这里配置的是mysql的，当然也可以配置oracle等数据库，注意连接地址中的时间问题 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.cj.jdbc.Driver"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://localhost:3306/miaosha?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;useSSL=false&amp;amp;serverTimezone=UTC"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">userId</span>=<span class="string">"root"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">password</span>=<span class="string">"root123"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!--数据库类型和java类型的控制转换--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer;为true时把JDBC DECIMAL和NUMERIC类型解析为java.math.BigDecimal--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!--生成DataObject(Pojo)类包名和存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.miaoshaproject.dataobject"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!-- 生成Mapper映射XML文件存放位置 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"mapping"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/resources"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!--生成Dao类(Mapper接口)文件存放位置--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件的代码</span></span><br><span class="line"><span class="comment">                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象</span></span><br><span class="line"><span class="comment">                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象</span></span><br><span class="line"><span class="comment">                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.miaoshaproject.dao"</span> <span class="attr">targetProject</span>=<span class="string">"src/main/java"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--生成对应表及类名(更改tableName和domainObjectName就可以)--&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- tableName:要生成的表名</span></span><br><span class="line"><span class="comment">        domainObjectName:生成后的实例名</span></span><br><span class="line"><span class="comment">        enableCountByExample:Count语句中加入where条件查询，默认为true开启</span></span><br><span class="line"><span class="comment">        enableUpdateByExample:Update语句中加入where条件查询，默认为true开启</span></span><br><span class="line"><span class="comment">        enableDeleteByExample:Delete语句中加入where条件查询，默认为true开启</span></span><br><span class="line"><span class="comment">        enableSelectByExample:Select多条语句中加入where条件查询，默认为true开启</span></span><br><span class="line"><span class="comment">        selectByExampleQueryId:Select单个对象语句中加入where条件查询，默认为true开启</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"user_info"</span> <span class="attr">domainObjectName</span>=<span class="string">"UserDO"</span>  <span class="attr">enableCountByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"user_password"</span> <span class="attr">domainObjectName</span>=<span class="string">"UserPasswordDO"</span> <span class="attr">enableCountByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableUpdateByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableDeleteByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">enableSelectByExample</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">               <span class="attr">selectByExampleQueryId</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4_u3001_u8FD0_u884Cmaven_u547D_u4EE4"><a href="#4_u3001_u8FD0_u884Cmaven_u547D_u4EE4" class="headerlink" title="4、运行maven命令"></a>4、运行maven命令</h2><p>在run按钮下找到edit configuration，新建maven并配置maven命令：<code>mybatis-generator:generate</code>。</p>
+<p><img src="/2019/11/20/Java后端/MyBatis逆向工程/1566869870436.png" alt="1566869870436"></p>
+<h2 id="5_u3001_u5220_u9664_u5E26Example_u7684_u6587_u4EF6"><a href="#5_u3001_u5220_u9664_u5E26Example_u7684_u6587_u4EF6" class="headerlink" title="5、删除带Example的文件"></a>5、删除带Example的文件</h2>
       
     </div>
     
@@ -444,7 +453,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/创建型模式/" rel="tag"># 创建型模式</a>
+            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+          
+            <a href="/tags/项目/" rel="tag"># 项目</a>
           
         </div>
       
@@ -457,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/24/单例模式/" rel="next" title="设计模式（一）单例模式">
-                <i class="fa fa-chevron-left"></i> 设计模式（一）单例模式
+              <a href="/2019/11/19/Java后端/SpringBoot 构建电商项目/" rel="next" title="SpringBoot构建电商项目">
+                <i class="fa fa-chevron-left"></i> SpringBoot构建电商项目
               </a>
             
           </div>
@@ -466,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/23/创建型模式/" rel="prev" title="创建型模式">
+                创建型模式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -520,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -583,6 +607,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_u3001pom-xml_u914D_u7F6E"><span class="nav-text">1、pom.xml配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2__u3001_u6570_u636E_u5E93_u64CD_u4F5C"><span class="nav-text">2 、数据库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3_u3001_u914D_u7F6E_u9006_u5411_u5DE5_u7A0B_u6587_u4EF6"><span class="nav-text">3、配置逆向工程文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4_u3001_u8FD0_u884Cmaven_u547D_u4EE4"><span class="nav-text">4、运行maven命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5_u3001_u5220_u9664_u5E26Example_u7684_u6587_u4EF6"><span class="nav-text">5、删除带Example的文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>抽象工厂模式</title>
+    <title>创建型模式总结</title>
+    <url>/2019/11/25/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p>创建型模式的主要关注点是“怎样创建对象？”，它这样可以降低系统的耦合度，使用者不需要关注对象的创建细节，对象的创建由相关的工厂来完成。就像我们去商场购买商品时，不需要知道商品是怎么生产出来一样，因为它们由专门的厂商生产。</p>
+<p> 创建型模式分为以下几种。 </p>
+<ul>
+<li>单例（Singleton）模式：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式。</li>
+<li>原型（Prototype）模式：将一个对象作为原型，通过对其进行复制而克隆出多个和原型类似的新实例。</li>
+<li>工厂方法（FactoryMethod）模式：定义一个用于创建产品的接口，由子类决定生产什么产品。</li>
+<li>抽象工厂（AbstractFactory）模式：提供一个创建产品族的接口，其每个子类可以生产一系列相关的产品。</li>
+<li>建造者（Builder）模式：将一个复杂对象分解成多个相对简单的部分，然后根据不同需要分别创建它们，最后构建成该复杂对象。</li>
+</ul>
+<p>以上 5 种创建型模式，除了属于类创建型模式，其他的全部属于对象创建型模式。</p>
+<p>参考: <a href="http://c.biancheng.net/view/1335.html" target="_blank" rel="noopener">http://c.biancheng.net/view/1335.html</a> </p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+        <category>创建型模式</category>
+      </categories>
+      <tags>
+        <tag>创建型模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>创建型模式之建造者模式</title>
+    <url>/2019/11/25/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>设计模式</category>
+        <category>创建型模式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>创建型模式之抽象工厂模式</title>
     <url>/2019/11/24/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>工厂方法模式中考虑的是一类产品的生产，如畜牧场只养动物、电视机厂只生产电视机、计算机软件学院只培养计算机软件专业的学生等。</p>
 <p>同种类称为同等级，也就是说：工厂方法模式只考虑生产同等级的产品，但是在现实生活中许多工厂是综合型的工厂，能生产多等级（种类） 的产品，如农场里既养动物又种植物，电器厂既生产电视机又生产洗衣机或空调，大学既有软件专业又有生物专业等。 </p>
@@ -37,7 +69,7 @@
       </categories>
   </entry>
   <entry>
-    <title>设计模式之工厂模式</title>
+    <title>创建型模式之工厂模式</title>
     <url>/2019/11/24/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p> 在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。 </p>
 <h2 id="u4E00_u3001_u5DE5_u5382_u6A21_u5F0F_u7684_u5B9A_u4E49_u548C_u7279_u70B9"><a href="#u4E00_u3001_u5DE5_u5382_u6A21_u5F0F_u7684_u5B9A_u4E49_u548C_u7279_u70B9" class="headerlink" title="一、工厂模式的定义和特点"></a>一、工厂模式的定义和特点</h2><p>工厂方法（FactoryMethod）模式的定义：<strong>定义一个创建产品对象的工厂接口，将产品对象的实际创建工作推迟到具体子工厂类当中。</strong>（这满足创建型模式中所要求的“创建与使用相分离”的特点。)</p>
@@ -82,7 +114,7 @@
       </tags>
   </entry>
   <entry>
-    <title>设计模式之单例模式</title>
+    <title>创建型模式之单例模式</title>
     <url>/2019/11/24/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>在有些系统中，为了节省内存资源、保证数据内容的一致性，对某些类要求只能创建一个实例，这就是所谓的单例模式。</p>
 <ul>
@@ -136,29 +168,6 @@
       <tags>
         <tag>创建型模式</tag>
         <tag>单例模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>设计模式之创建型模式(单例，工厂等)</title>
-    <url>/2019/11/23/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<p>创建型模式的主要关注点是“怎样创建对象？”，它这样可以降低系统的耦合度，使用者不需要关注对象的创建细节，对象的创建由相关的工厂来完成。就像我们去商场购买商品时，不需要知道商品是怎么生产出来一样，因为它们由专门的厂商生产。</p>
-<p> 创建型模式分为以下几种。 </p>
-<ul>
-<li>单例（Singleton）模式：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式。</li>
-<li>原型（Prototype）模式：将一个对象作为原型，通过对其进行复制而克隆出多个和原型类似的新实例。</li>
-<li>工厂方法（FactoryMethod）模式：定义一个用于创建产品的接口，由子类决定生产什么产品。</li>
-<li>抽象工厂（AbstractFactory）模式：提供一个创建产品族的接口，其每个子类可以生产一系列相关的产品。</li>
-<li>建造者（Builder）模式：将一个复杂对象分解成多个相对简单的部分，然后根据不同需要分别创建它们，最后构建成该复杂对象。</li>
-</ul>
-<p>以上 5 种创建型模式，除了属于类创建型模式，其他的全部属于对象创建型模式。</p>
-<p>参考: <a href="http://c.biancheng.net/view/1335.html" target="_blank" rel="noopener">http://c.biancheng.net/view/1335.html</a> </p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-        <category>创建型模式</category>
-      </categories>
-      <tags>
-        <tag>创建型模式</tag>
       </tags>
   </entry>
   <entry>
@@ -461,7 +470,7 @@
 <li><strong>pop 动作在 stack2 中进行。当 stack2 不为空时，直接 pop，当 stack2 为空时，先把 stack1 中的元素 pop 出来，push 到 stack2 中，再从 stack2 中 pop 元素。</strong></li>
 </ul>
 <h3 id="u5B9E_u73B0_u4EE3_u7801"><a href="#u5B9E_u73B0_u4EE3_u7801" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">solution</span></span>&#123;</span><br><span class="line">    <span class="comment">//1、定义两个栈</span></span><br><span class="line">    Stack&lt;Integer&gt; stack1 = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">    Stack&lt;Integer&gt; stack2 = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2、push操作</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> node)</span></span>&#123;</span><br><span class="line">        stack1.push(node);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//3、pop操作</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(stack2.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">while</span>(!stack1.isEmpty())&#123;</span><br><span class="line">                stack2.push(stack1.pop());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack2.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="06_u3001_u65CB_u8F6C_u6570_u7EC4_u7684_u6700_u5C0F_u6570_u5B57_uFF08_u540CLeetCode153_uFF0C154_uFF0C_u4E00_u822C_uFF09"><a href="#06_u3001_u65CB_u8F6C_u6570_u7EC4_u7684_u6700_u5C0F_u6570_u5B57_uFF08_u540CLeetCode153_uFF0C154_uFF0C_u4E00_u822C_uFF09" class="headerlink" title="06、旋转数组的最小数字（同LeetCode153，154，一般）"></a>06、旋转数组的最小数字（同LeetCode153，154，一般）</h2><h3 id="u9898_u76EE_u63CF_u8FF0-5"><a href="#u9898_u76EE_u63CF_u8FF0-5" class="headerlink" title="题目描述"></a>题目描述</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
+<h2 id="06_u3001_u65CB_u8F6C_u6570_u7EC4_u7684_u6700_u5C0F_u6570_u5B57_uFF08_u540CLeetCode153_uFF0C154_uFF09"><a href="#06_u3001_u65CB_u8F6C_u6570_u7EC4_u7684_u6700_u5C0F_u6570_u5B57_uFF08_u540CLeetCode153_uFF0C154_uFF09" class="headerlink" title="06、旋转数组的最小数字（同LeetCode153，154）"></a>06、旋转数组的最小数字（同LeetCode153，154）</h2><h3 id="u9898_u76EE_u63CF_u8FF0-5"><a href="#u9898_u76EE_u63CF_u8FF0-5" class="headerlink" title="题目描述"></a>题目描述</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。</p>
 <h3 id="u89E3_u9898_u601D_u8DEF-5"><a href="#u89E3_u9898_u601D_u8DEF-5" class="headerlink" title="解题思路"></a>解题思路</h3><p>使用二分查找</p>
 <p>注意：</p>
 <ul>
